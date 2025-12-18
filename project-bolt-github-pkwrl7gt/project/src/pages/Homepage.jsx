@@ -36,7 +36,7 @@ export default function HomePage() {
         </div>
 
         <div className="hero-visual-demo">
-          <div className="demo-card demo-card-1" style={{boxShadow: '0 30px 80px rgba(0, 0, 0, 0.2)', zIndex: 5}}>
+          <div className="demo-card demo-card-1" style={{boxShadow: '0 20px 50px rgba(0, 0, 0, 0.16)', zIndex: 2}}>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem'}}>
               <div style={{fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Performance</div>
               <div style={{fontSize: '0.6875rem', color: '#94a3b8', fontWeight: 600}}>YTD</div>
@@ -55,7 +55,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="demo-card demo-card-2" style={{boxShadow: '0 35px 90px rgba(0, 0, 0, 0.22)', transform: 'translateX(-50%) scale(1.05)', zIndex: 6}}>
+          <div className="demo-card demo-card-2" style={{boxShadow: '0 35px 90px rgba(0, 0, 0, 0.24)', zIndex: 3}}>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem'}}>
               <div style={{fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Total Value</div>
               <div style={{display: 'inline-flex', alignItems: 'center', background: 'linear-gradient(135deg, #06b6d4, #10b981)', color: 'white', padding: '0.25rem 0.5rem', borderRadius: '6px', fontSize: '0.625rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.025em'}}>PRO</div>
@@ -64,7 +64,7 @@ export default function HomePage() {
             <div className="demo-label-small" style={{marginTop: '0.5rem'}}>24 POSITIONS</div>
           </div>
 
-          <div className="demo-card demo-card-3" style={{boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)', filter: 'brightness(0.98)', zIndex: 4}}>
+          <div className="demo-card demo-card-3" style={{boxShadow: '0 20px 50px rgba(0, 0, 0, 0.16)', zIndex: 2}}>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem'}}>
               <div style={{fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Allocation</div>
               <div style={{fontSize: '0.6875rem', color: '#94a3b8', fontWeight: 600}}>Real-time</div>
