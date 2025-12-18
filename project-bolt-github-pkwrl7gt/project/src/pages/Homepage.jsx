@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { TrendingUp, Upload, BarChart3, Shield, Zap, Target, Eye, Sparkles, ArrowRight } from "lucide-react";
+import { TrendingUp, Upload, BarChart3, Shield, Target, Eye, Sparkles, ArrowRight, PieChart, LineChart } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="home-page">
-      <section className="hero-section-modern">
-        <div className="hero-content">
+    <div className="home-page-animated">
+      <section className="hero-section-animated">
+        <div className="hero-content-centered">
           <div className="hero-badge-modern">
             <Sparkles size={16} />
             <span>Smart Portfolio Management</span>
@@ -32,35 +32,11 @@ export default function HomePage() {
               <span>Bekijk demo</span>
             </Link>
           </div>
-
-          <div className="hero-stats">
-            <div className="stat-item">
-              <TrendingUp size={24} />
-              <div>
-                <div className="stat-value">Real-time</div>
-                <div className="stat-label">Koersen</div>
-              </div>
-            </div>
-            <div className="stat-item">
-              <Shield size={24} />
-              <div>
-                <div className="stat-value">100%</div>
-                <div className="stat-label">Privacy</div>
-              </div>
-            </div>
-            <div className="stat-item">
-              <Target size={24} />
-              <div>
-                <div className="stat-value">Instant</div>
-                <div className="stat-label">Analyse</div>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="visual-card card-1">
-            <div className="mini-chart">
+        <div className="hero-visual-demo">
+          <div className="demo-card demo-card-1">
+            <div className="demo-chart">
               <div className="chart-bar" style={{height: '40%'}}></div>
               <div className="chart-bar" style={{height: '65%'}}></div>
               <div className="chart-bar" style={{height: '45%'}}></div>
@@ -68,56 +44,78 @@ export default function HomePage() {
               <div className="chart-bar" style={{height: '60%'}}></div>
               <div className="chart-bar" style={{height: '95%'}}></div>
             </div>
-            <div className="card-label">
-              <TrendingUp size={16} />
-              <span>+24.5%</span>
+            <div className="demo-label">
+              <TrendingUp size={16} className="text-success" />
+              <span className="text-success font-bold">+24.5%</span>
             </div>
           </div>
 
-          <div className="visual-card card-2">
-            <div className="donut-mini"></div>
-            <div className="card-label">Portfolio Mix</div>
+          <div className="demo-card demo-card-2">
+            <div className="demo-value">€ 45,250</div>
+            <div className="demo-label-small">TOTALE WAARDE</div>
           </div>
 
-          <div className="visual-card card-3">
-            <div className="value-display">€ 45,250</div>
-            <div className="card-label">Totale waarde</div>
+          <div className="demo-card demo-card-3">
+            <div className="demo-donut"></div>
+            <div className="demo-label-small">PORTFOLIO MIX</div>
           </div>
         </div>
       </section>
 
-      <section className="features-section">
-        <div className="section-header">
-          <h2>Alles wat je nodig hebt</h2>
-          <p>Krachtige tools voor slimmer beleggen</p>
+      <section className="features-showcase">
+        <div className="showcase-header">
+          <div className="showcase-badge">Investeer als een PRO</div>
+          <h2 className="showcase-title">
+            Unlock the Tools
+            <br />
+            <span className="showcase-title-highlight">Serious Investors Love</span>
+          </h2>
         </div>
 
-        <div className="features-grid">
-          <Link to="/demo" className="feature-card">
-            <div className="feature-icon blue">
-              <Eye size={24} />
+        <div className="features-layout">
+          <div className="feature-box feature-box-large">
+            <div className="feature-box-content">
+              <h3>Deep Portfolio Insights</h3>
+              <p>
+                Transformeer data in beslissingen met Portfolio Insights. PRO gebruikers krijgen toegang tot
+                krachtige modules die helderheid en vertrouwen geven aan je portfolio. Voor de volledige set
+                van geavanceerde analytics modules, upgrade naar PRO+ en ontgrendel diepere inzichten.
+              </p>
+              <Link to="/demo" className="explore-link">
+                Explore Insights <ArrowRight size={16} />
+              </Link>
             </div>
-            <h3>Demo Dashboard</h3>
-            <p>Probeer Portfallo uit met voorbeeld data en zie alle features in actie voordat je start.</p>
-            <div className="feature-arrow">→</div>
-          </Link>
+            <div className="feature-box-visual">
+              <div className="visual-mockup">
+                <LineChart size={48} className="mockup-icon" />
+              </div>
+            </div>
+          </div>
 
-          <Link to="/upload" className="feature-card">
-            <div className="feature-icon green">
-              <Upload size={24} />
+          <div className="feature-box feature-box-medium">
+            <div className="feature-box-content">
+              <h3>Assets Tracked</h3>
+              <p>
+                Eén plek voor al je investeringen. Met PRO kun je tot 40 assets in één portfolio tracken.
+                Upgrade naar PRO+ voor onbeperkte asset tracking.
+              </p>
             </div>
-            <h3>Upload & Analyse</h3>
-            <p>Importeer je transactiedata en krijg direct diepgaand inzicht in je portfolio performance.</p>
-            <div className="feature-arrow">→</div>
-          </Link>
+            <div className="feature-box-visual-small">
+              <BarChart3 size={32} className="feature-icon-inline" />
+            </div>
+          </div>
 
-          <div className="feature-card pro-card">
-            <div className="feature-icon gold">
-              <Target size={24} />
+          <div className="feature-box feature-box-medium">
+            <div className="feature-box-content">
+              <h3>Asset Analytics</h3>
+              <p>
+                Blijf voor op de curve met Asset Analytics. Krijg heldere verklaringen voor marktbewegingen
+                en zie insider trades, wat je de context geeft om vol vertrouwen te handelen.
+              </p>
             </div>
-            <h3>AI Advies</h3>
-            <p>Slimme aanbevelingen, risk analysis en portfolio optimalisatie op basis van je doelen.</p>
-            <div className="pro-badge-inline">PRO</div>
+            <div className="feature-box-visual-small">
+              <PieChart size={32} className="feature-icon-inline" />
+            </div>
           </div>
         </div>
       </section>
