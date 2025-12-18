@@ -30,7 +30,7 @@ export default function TransactionsPage() {
       onClick: true
     },
     {
-      name: "Enterprise",
+      name: "Premium",
       price: "€29,99",
       period: "per maand",
       description: "Voor professionele beleggers en vermogensbeheerders",
@@ -43,30 +43,30 @@ export default function TransactionsPage() {
   ];
 
   const features = [
-    { name: "Tot 10 posities", free: true, pro: false, enterprise: false },
-    { name: "Onbeperkt aantal posities", free: false, pro: true, enterprise: true },
-    { name: "Basis portfolio analytics", free: true, pro: true, enterprise: true },
-    { name: "Performance tracking", free: true, pro: true, enterprise: true },
-    { name: "CSV import (DeGiro)", free: true, pro: true, enterprise: true },
-    { name: "Portfolio allocatie chart", free: true, pro: true, enterprise: true },
-    { name: "Open & gesloten posities", free: true, pro: true, enterprise: true },
-    { name: "Basis P/L rapportage", free: true, pro: true, enterprise: true },
-    { name: "AI-powered rebalancing advies", free: false, pro: true, enterprise: true },
-    { name: "Geavanceerde risico analyse", free: false, pro: true, enterprise: true },
-    { name: "Real-time koersen & alerts", free: false, pro: true, enterprise: true },
-    { name: "Tax loss harvesting suggesties", free: false, pro: true, enterprise: true },
-    { name: "Portfolio stress tests", free: false, pro: true, enterprise: true },
-    { name: "Advanced performance metrics", free: false, pro: true, enterprise: true },
-    { name: "Export naar Excel/PDF", free: false, pro: true, enterprise: true },
-    { name: "Email ondersteuning", free: false, pro: true, enterprise: true },
-    { name: "Meerdere portfolio's beheren", free: false, pro: false, enterprise: true },
-    { name: "Team collaboration tools", free: false, pro: false, enterprise: true },
-    { name: "API toegang voor integraties", free: false, pro: false, enterprise: true },
-    { name: "Custom rapportage & branding", free: false, pro: false, enterprise: true },
-    { name: "Dedicated account manager", free: false, pro: false, enterprise: true },
-    { name: "Priority ondersteuning", free: false, pro: false, enterprise: true },
-    { name: "Geavanceerde tax reporting", free: false, pro: false, enterprise: true },
-    { name: "White-label optie beschikbaar", free: false, pro: false, enterprise: true }
+    { name: "Tot 10 posities", free: true, pro: false, premium: false },
+    { name: "Onbeperkt aantal posities", free: false, pro: true, premium: true },
+    { name: "Basis portfolio analytics", free: true, pro: true, premium: true },
+    { name: "Performance tracking", free: true, pro: true, premium: true },
+    { name: "CSV import (DeGiro)", free: true, pro: true, premium: true },
+    { name: "Portfolio allocatie chart", free: true, pro: true, premium: true },
+    { name: "Open & gesloten posities", free: true, pro: true, premium: true },
+    { name: "Basis P/L rapportage", free: true, pro: true, premium: true },
+    { name: "AI-powered rebalancing advies", free: false, pro: true, premium: true },
+    { name: "Geavanceerde risico analyse", free: false, pro: true, premium: true },
+    { name: "Real-time koersen & alerts", free: false, pro: true, premium: true },
+    { name: "Tax loss harvesting suggesties", free: false, pro: true, premium: true },
+    { name: "Portfolio stress tests", free: false, pro: true, premium: true },
+    { name: "Advanced performance metrics", free: false, pro: true, premium: true },
+    { name: "Export naar Excel/PDF", free: false, pro: true, premium: true },
+    { name: "Email ondersteuning", free: false, pro: true, premium: true },
+    { name: "Meerdere portfolio's beheren", free: false, pro: false, premium: true },
+    { name: "Team collaboration tools", free: false, pro: false, premium: true },
+    { name: "API toegang voor integraties", free: false, pro: false, premium: true },
+    { name: "Custom rapportage & branding", free: false, pro: false, premium: true },
+    { name: "Dedicated account manager", free: false, pro: false, premium: true },
+    { name: "Priority ondersteuning", free: false, pro: false, premium: true },
+    { name: "Geavanceerde tax reporting", free: false, pro: false, premium: true },
+    { name: "White-label optie beschikbaar", free: false, pro: false, premium: true }
   ];
 
   return (
@@ -82,9 +82,7 @@ export default function TransactionsPage() {
           </p>
         </div>
 
-        <div className="mb-12 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="hidden md:block"></div>
-
+        <div className="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {plans.map((plan, index) => {
             const IconComponent = plan.icon;
             return (
@@ -133,7 +131,14 @@ export default function TransactionsPage() {
           })}
         </div>
 
-        <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+        <div className="bg-white rounded-lg border border-slate-200 overflow-hidden shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-4 border-b border-slate-200 bg-slate-50">
+            <div className="px-6 py-4 font-bold text-slate-900">Features</div>
+            <div className="px-6 py-4 font-bold text-slate-900 text-center md:text-left">Free</div>
+            <div className="px-6 py-4 font-bold text-slate-900 text-center md:text-left">Pro</div>
+            <div className="px-6 py-4 font-bold text-slate-900 text-center md:text-left">Premium</div>
+          </div>
+
           {features.map((feature, index) => (
             <div
               key={index}
@@ -160,7 +165,7 @@ export default function TransactionsPage() {
               </div>
 
               <div className="px-6 py-4 flex items-center justify-center md:justify-start">
-                {feature.enterprise ? (
+                {feature.premium ? (
                   <Check size={20} className="text-blue-600" />
                 ) : (
                   <X size={20} className="text-slate-300" />
