@@ -43,30 +43,36 @@ export default function TransactionsPage() {
   ];
 
   const features = [
-    { name: "Tot 10 posities", free: true, pro: false, premium: false },
-    { name: "Onbeperkt aantal posities", free: false, pro: true, premium: true },
-    { name: "Basis portfolio analytics", free: true, pro: true, premium: true },
-    { name: "Performance tracking", free: true, pro: true, premium: true },
-    { name: "CSV import (DeGiro)", free: true, pro: true, premium: true },
-    { name: "Portfolio allocatie chart", free: true, pro: true, premium: true },
-    { name: "Open & gesloten posities", free: true, pro: true, premium: true },
-    { name: "Basis P/L rapportage", free: true, pro: true, premium: true },
-    { name: "AI-powered rebalancing advies", free: false, pro: true, premium: true },
-    { name: "Geavanceerde risico analyse", free: false, pro: true, premium: true },
-    { name: "Real-time koersen & alerts", free: false, pro: true, premium: true },
-    { name: "Tax loss harvesting suggesties", free: false, pro: true, premium: true },
-    { name: "Portfolio stress tests", free: false, pro: true, premium: true },
-    { name: "Advanced performance metrics", free: false, pro: true, premium: true },
-    { name: "Export naar Excel/PDF", free: false, pro: true, premium: true },
-    { name: "Email ondersteuning", free: false, pro: true, premium: true },
-    { name: "Meerdere portfolio's beheren", free: false, pro: false, premium: true },
-    { name: "Team collaboration tools", free: false, pro: false, premium: true },
-    { name: "API toegang voor integraties", free: false, pro: false, premium: true },
-    { name: "Custom rapportage & branding", free: false, pro: false, premium: true },
-    { name: "Dedicated account manager", free: false, pro: false, premium: true },
-    { name: "Priority ondersteuning", free: false, pro: false, premium: true },
-    { name: "Geavanceerde tax reporting", free: false, pro: false, premium: true },
-    { name: "White-label optie beschikbaar", free: false, pro: false, premium: true }
+    { category: "Core Tracking", name: "CSV Import", free: true, pro: true, premium: true },
+    { category: "Core Tracking", name: "Position Tracking", free: true, pro: true, premium: true },
+    { category: "Core Tracking", name: "Transaction History", free: true, pro: true, premium: true },
+    { category: "Core Tracking", name: "Portfolio Value", free: true, pro: true, premium: true },
+    { category: "Core Tracking", name: "Allocation Chart", free: true, pro: true, premium: true },
+
+    { category: "Insights & Analytics", name: "Performance Metrics", free: false, pro: true, premium: true },
+    { category: "Insights & Analytics", name: "Risk Analysis", free: false, pro: true, premium: true },
+    { category: "Insights & Analytics", name: "Tax Analysis", free: false, pro: true, premium: true },
+    { category: "Insights & Analytics", name: "Sector Breakdown", free: false, pro: true, premium: true },
+
+    { category: "Limits & Scale", name: "Up to 10 Positions", free: true, pro: false, premium: false },
+    { category: "Limits & Scale", name: "Unlimited Positions", free: false, pro: true, premium: true },
+    { category: "Limits & Scale", name: "Multiple Portfolios", free: false, pro: false, premium: true },
+    { category: "Limits & Scale", name: "Team Accounts", free: false, pro: false, premium: true },
+
+    { category: "Automation & Intelligence", name: "Auto Rebalancing", free: false, pro: false, premium: true },
+    { category: "Automation & Intelligence", name: "AI Portfolio Advice", free: false, pro: false, premium: true },
+    { category: "Automation & Intelligence", name: "Smart Alerts", free: false, pro: false, premium: true },
+    { category: "Automation & Intelligence", name: "Tax Loss Harvesting", free: false, pro: false, premium: true },
+
+    { category: "Reporting & Export", name: "PDF Reports", free: false, pro: true, premium: true },
+    { category: "Reporting & Export", name: "Excel Export", free: false, pro: false, premium: true },
+    { category: "Reporting & Export", name: "Custom Reports", free: false, pro: false, premium: true },
+    { category: "Reporting & Export", name: "API Access", free: false, pro: false, premium: true },
+
+    { category: "Support & Control", name: "Email Support", free: false, pro: true, premium: true },
+    { category: "Support & Control", name: "Priority Support", free: false, pro: false, premium: true },
+    { category: "Support & Control", name: "Account Manager", free: false, pro: false, premium: true },
+    { category: "Support & Control", name: "White-label Option", free: false, pro: false, premium: true }
   ];
 
   return (
@@ -139,40 +145,51 @@ export default function TransactionsPage() {
             <div className="px-6 py-4 font-bold text-slate-900 text-center md:text-left">Premium</div>
           </div>
 
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-1 md:grid-cols-4 border-b border-slate-100 hover:bg-slate-50 transition-colors"
-            >
-              <div className="px-6 py-4 font-medium text-slate-700">
-                {feature.name}
-              </div>
+          {features.map((feature, index) => {
+            const showCategoryHeader = index === 0 || features[index - 1].category !== feature.category;
 
-              <div className="px-6 py-4 flex items-center justify-center md:justify-start">
-                {feature.free ? (
-                  <Check size={20} className="text-blue-600" />
-                ) : (
-                  <X size={20} className="text-slate-300" />
+            return (
+              <React.Fragment key={index}>
+                {showCategoryHeader && (
+                  <div className="grid grid-cols-1 md:grid-cols-4 bg-slate-100 border-b border-slate-200">
+                    <div className="px-6 py-3 font-bold text-slate-900 text-sm uppercase tracking-wide col-span-4">
+                      {feature.category}
+                    </div>
+                  </div>
                 )}
-              </div>
 
-              <div className="px-6 py-4 flex items-center justify-center md:justify-start">
-                {feature.pro ? (
-                  <Check size={20} className="text-blue-600" />
-                ) : (
-                  <X size={20} className="text-slate-300" />
-                )}
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-4 border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                  <div className="px-6 py-4 font-medium text-slate-700">
+                    {feature.name}
+                  </div>
 
-              <div className="px-6 py-4 flex items-center justify-center md:justify-start">
-                {feature.premium ? (
-                  <Check size={20} className="text-blue-600" />
-                ) : (
-                  <X size={20} className="text-slate-300" />
-                )}
-              </div>
-            </div>
-          ))}
+                  <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                    {feature.free ? (
+                      <Check size={20} className="text-blue-600" />
+                    ) : (
+                      <X size={20} className="text-slate-300" />
+                    )}
+                  </div>
+
+                  <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                    {feature.pro ? (
+                      <Check size={20} className="text-blue-600" />
+                    ) : (
+                      <X size={20} className="text-slate-300" />
+                    )}
+                  </div>
+
+                  <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                    {feature.premium ? (
+                      <Check size={20} className="text-blue-600" />
+                    ) : (
+                      <X size={20} className="text-slate-300" />
+                    )}
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
         </div>
 
         <div className="mt-16 text-center">
