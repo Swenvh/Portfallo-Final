@@ -780,10 +780,12 @@ tbody tr:hover {
 
 .home-page-animated {
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(-45deg, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff);
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
   position: relative;
+  overflow-x: hidden;
 }
 
 @keyframes gradientFlow {
@@ -2396,11 +2398,13 @@ tbody tr:hover {
 .hero-subtitle-modern {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #475569;
+  color: #334155;
   margin: 0 0 2rem 0;
   animation: fadeInUp 0.6s ease-out 0.2s both;
-  font-weight: 400;
-  max-width: 540px;
+  font-weight: 500;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-cta-modern {
@@ -2455,22 +2459,21 @@ tbody tr:hover {
 /* ===== HERO SECTION ANIMATED ===== */
 
 .hero-section-animated {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 5rem 2rem 3rem;
+  width: 100%;
+  padding: 3rem 2rem 6rem;
   text-align: center;
 }
 
 .hero-content-centered {
   max-width: 800px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 5rem;
 }
 
 .hero-visual-demo {
   position: relative;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  height: 400px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2478,12 +2481,13 @@ tbody tr:hover {
 
 .demo-card {
   position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 1.75rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(10px);
   animation: floatDemo 6s ease-in-out infinite;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 @keyframes floatDemo {
@@ -2491,80 +2495,86 @@ tbody tr:hover {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-25px);
   }
 }
 
 .demo-card-1 {
-  width: 280px;
-  top: 10%;
-  left: 5%;
+  width: 320px;
+  top: 5%;
+  left: 8%;
   animation-delay: 0s;
+  z-index: 3;
 }
 
 .demo-card-2 {
-  width: 260px;
-  top: 50%;
+  width: 300px;
+  top: 40%;
   left: 50%;
   transform: translateX(-50%);
   animation-delay: 2s;
+  z-index: 4;
 }
 
 .demo-card-3 {
-  width: 240px;
-  top: 20%;
-  right: 8%;
+  width: 280px;
+  top: 10%;
+  right: 10%;
   animation-delay: 4s;
+  z-index: 3;
 }
 
 .demo-chart {
   display: flex;
   align-items: flex-end;
-  gap: 10px;
-  height: 100px;
-  margin-bottom: 1rem;
+  gap: 12px;
+  height: 120px;
+  margin-bottom: 1.25rem;
 }
 
 .demo-chart .chart-bar {
   flex: 1;
   background: linear-gradient(180deg, #06b6d4 0%, #10b981 100%);
-  border-radius: 6px 6px 0 0;
+  border-radius: 8px 8px 0 0;
   animation: growBar 1s ease-out both;
   transform-origin: bottom;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
 }
 
 .demo-label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
 }
 
 .demo-value {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 800;
   background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .demo-label-small {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-align: center;
 }
 
 .demo-donut {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 1rem;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1.25rem;
   border-radius: 50%;
   background: conic-gradient(
     #06b6d4 0deg 120deg,
@@ -2573,6 +2583,7 @@ tbody tr:hover {
     #e2e8f0 300deg 360deg
   );
   position: relative;
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25);
 }
 
 .demo-donut::after {
@@ -2581,42 +2592,46 @@ tbody tr:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   background: white;
   border-radius: 50%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .hero-visual-demo {
-    height: 500px;
+    height: auto;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
   }
 
   .demo-card-1,
   .demo-card-2,
   .demo-card-3 {
     position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    margin: 1rem auto;
-  }
-
-  .hero-visual-demo {
-    flex-direction: column;
-    height: auto;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 320px;
   }
 }
 
 /* ===== FEATURES SHOWCASE ===== */
 
 .features-showcase {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 5rem 2rem;
+  width: 100%;
+  padding: 5rem 2rem 6rem;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
-  border-radius: 40px;
+}
+
+.features-showcase-inner {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .showcase-header {
@@ -2658,14 +2673,14 @@ tbody tr:hover {
   }
 }
 
-.features-layout {
+.features-showcase-inner .features-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
 @media (max-width: 968px) {
-  .features-layout {
+  .features-showcase-inner .features-layout {
     grid-template-columns: 1fr;
   }
 }

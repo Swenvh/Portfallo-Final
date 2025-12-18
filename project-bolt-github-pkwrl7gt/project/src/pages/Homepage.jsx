@@ -63,16 +63,17 @@ export default function HomePage() {
       </section>
 
       <section className="features-showcase">
-        <div className="showcase-header">
-          <div className="showcase-badge">Investeer als een PRO</div>
-          <h2 className="showcase-title">
-            Unlock the Tools
-            <br />
-            <span className="showcase-title-highlight">Serious Investors Love</span>
-          </h2>
-        </div>
+        <div className="features-showcase-inner">
+          <div className="showcase-header">
+            <div className="showcase-badge">Investeer als een PRO</div>
+            <h2 className="showcase-title">
+              Unlock the Tools
+              <br />
+              <span className="showcase-title-highlight">Serious Investors Love</span>
+            </h2>
+          </div>
 
-        <div className="features-layout">
+          <div className="features-layout">
           <div className="feature-box feature-box-large">
             <div className="feature-box-content">
               <h3>Deep Portfolio Insights</h3>
@@ -117,6 +118,7 @@ export default function HomePage() {
               <PieChart size={32} className="feature-icon-inline" />
             </div>
           </div>
+        </div>
         </div>
       </section>
     </div>
