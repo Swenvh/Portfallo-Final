@@ -45,11 +45,7 @@ export default function App() {
         <Route path="/upgrade" element={<UpgradePage />} />
         <Route path="/transactions" element={<TransactionsPage />} />
 
-        <Route path="/" element={
-          <main className="max-w-7xl mx-auto px-6 py-8">
-            <HomePage />
-          </main>
-        } />
+        <Route path="/" element={<HomePage />} />
 
         <Route path="/demo" element={
           <main className="max-w-7xl mx-auto px-6 py-8">
