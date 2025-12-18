@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { TrendingUp, Upload, BarChart3, Shield, Target, Eye, Sparkles, ArrowRight, PieChart, LineChart } from "lucide-react";
+import HomepageDashboardPreview from "../components/HomepageDashboardPreview";
 
 export default function HomePage() {
   return (
@@ -121,6 +122,8 @@ export default function HomePage() {
         </div>
         </div>
       </section>
+
+      <HomepageDashboardPreview />
     </div>
   );
 }

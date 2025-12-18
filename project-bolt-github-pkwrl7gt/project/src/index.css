@@ -3067,3 +3067,374 @@ tbody tr:hover {
     font-size: 1.5rem;
   }
 }
+
+/* ===== HOMEPAGE DASHBOARD PREVIEW ===== */
+
+.homepage-dashboard-preview {
+  padding: 6rem 1rem;
+  background: linear-gradient(180deg, #fafafa 0%, #f1f5f9 100%);
+}
+
+.homepage-preview-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.preview-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.preview-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+  border: 1px solid #bae6fd;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0369a1;
+  margin-bottom: 1rem;
+}
+
+.preview-section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.preview-section-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.homepage-locked-preview {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.homepage-preview-blur {
+  filter: blur(4px);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  background: white;
+  padding: 3rem;
+}
+
+.preview-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.preview-chart-card,
+.preview-table-card {
+  position: relative;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.preview-lock-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.preview-tooltip {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  background: #1e293b;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: tooltipFadeIn 0.2s ease-out;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preview-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.preview-card-header h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.preview-badge-small {
+  padding: 0.25rem 0.75rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.preview-card-body {
+  min-height: 250px;
+}
+
+.preview-table-container {
+  overflow-x: auto;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.preview-table th {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.preview-table th.right,
+.preview-table td.right {
+  text-align: right;
+}
+
+.preview-table td {
+  padding: 1rem 0.5rem;
+  font-size: 0.9375rem;
+  color: #0f172a;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.preview-asset-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.preview-asset-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preview-currency-badge {
+  padding: 0.125rem 0.375rem;
+  background: #dbeafe;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.preview-positive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.homepage-preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+  z-index: 50;
+}
+
+.homepage-unlock-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  cursor: default;
+  animation: slideUpIn 0.4s ease-out;
+  border: 1px solid #e2e8f0;
+}
+
+@keyframes slideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homepage-unlock-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.homepage-unlock-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.homepage-unlock-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-homepage-primary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.btn-homepage-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+}
+
+.btn-homepage-secondary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  color: #0f172a;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-homepage-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.homepage-upgrade-link {
+  display: inline-block;
+  color: #0ea5e9;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.homepage-upgrade-link:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .homepage-dashboard-preview {
+    padding: 4rem 1rem;
+  }
+
+  .preview-section-title {
+    font-size: 2rem;
+  }
+
+  .preview-section-subtitle {
+    font-size: 1rem;
+  }
+
+  .homepage-preview-blur {
+    padding: 1.5rem;
+  }
+
+  .preview-dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .homepage-unlock-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .homepage-unlock-title {
+    font-size: 1.5rem;
+  }
+
+  .homepage-unlock-subtitle {
+    font-size: 1rem;
+  }
+
+  .homepage-unlock-ctas {
+    flex-direction: column;
+  }
+
+  .preview-table {
+    font-size: 0.875rem;
+  }
+
+  .preview-card-body {
+    min-height: 200px;
+  }
+}
