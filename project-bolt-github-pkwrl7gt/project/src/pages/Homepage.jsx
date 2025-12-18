@@ -11,9 +11,12 @@ export default function HomePage() {
             <span>Portfolio Management Platform</span>
           </div>
 
-          <h1 className="hero-title">
-            Beheer je portfolio
-            <span className="gradient-text"> slim & overzichtelijk</span>
+          <h1 className="hero-title-stripe">
+            <span className="text-dark">Financiële</span>{" "}
+            <span className="text-blue">infrastructuur</span>
+            <br />
+            <span className="text-orange">voor meer</span>{" "}
+            <span className="text-dark">omzet</span>
           </h1>
 
           <p className="hero-subtitle">
@@ -21,14 +24,12 @@ export default function HomePage() {
             om betere beslissingen te maken. Alles wat je nodig hebt op één plek.
           </p>
 
-          <div className="hero-cta">
-            <Link to="/upload" className="btn-hero-primary">
-              <Upload size={20} />
-              Start met uploaden
+          <div className="hero-cta-stripe">
+            <Link to="/upload" className="btn-explore">
+              Explore Plans
             </Link>
-            <Link to="/demo" className="btn-hero-secondary">
-              <Eye size={20} />
-              Bekijk demo
+            <Link to="/demo" className="btn-features">
+              See Features
             </Link>
           </div>
 

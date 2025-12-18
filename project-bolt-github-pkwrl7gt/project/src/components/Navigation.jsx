@@ -20,10 +20,10 @@ export default function Navigation() {
       : "text-gray-600 hover:text-gray-800";
 
   return (
-    <nav className="w-full bg-white border-b shadow-sm px-6 py-3 sticky top-0 z-40">
+    <nav className="w-full bg-white/80 backdrop-blur-md border-b border-white/20 shadow-sm px-6 py-3 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 bg-blue-600 rounded-lg"></div>
+          <div className="w-7 h-7 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg"></div>
           <span className="text-xl font-semibold text-gray-900">Portfallo</span>
         </Link>
 
