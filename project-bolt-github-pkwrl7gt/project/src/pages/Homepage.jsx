@@ -19,8 +19,8 @@ export default function HomePage() {
           </h1>
 
           <p className="hero-subtitle-modern">
-            Analyseer je beleggingen, track performance in real-time en krijg waardevolle inzichten
-            om betere beslissingen te maken. Alles wat je nodig hebt op één plek.
+            Professioneel portfolio management voor serieuze beleggers.
+            Track performance, analyseer risico's en krijg diepgaande inzichten om betere beslissingen te maken.
           </p>
 
           <div className="hero-cta-modern">
@@ -66,25 +66,25 @@ export default function HomePage() {
       <section className="features-showcase">
         <div className="features-showcase-inner">
           <div className="showcase-header">
-            <div className="showcase-badge">Investeer als een PRO</div>
+            <div className="showcase-badge">Voor serieuze beleggers</div>
             <h2 className="showcase-title">
-              Unlock the Tools
+              Professionele tools
               <br />
-              <span className="showcase-title-highlight">Serious Investors Love</span>
+              <span className="showcase-title-highlight">die échte waarde leveren</span>
             </h2>
           </div>
 
           <div className="features-layout">
           <div className="feature-box feature-box-large">
             <div className="feature-box-content">
-              <h3>Deep Portfolio Insights</h3>
+              <h3>Diepgaande Portfolio Analytics</h3>
               <p>
-                Transformeer data in beslissingen met Portfolio Insights. PRO gebruikers krijgen toegang tot
-                krachtige modules die helderheid en vertrouwen geven aan je portfolio. Voor de volledige set
-                van geavanceerde analytics modules, upgrade naar PRO+ en ontgrendel diepere inzichten.
+                Transformeer data in actie met geavanceerde analytics. PRO-gebruikers krijgen toegang tot
+                performance tracking, risico-analyse en rebalancing advies. Voor volledige controle en
+                uitgebreide historische analyse is Premium beschikbaar.
               </p>
               <Link to="/demo" className="explore-link">
-                Explore Insights <ArrowRight size={16} />
+                Bekijk mogelijkheden <ArrowRight size={16} />
               </Link>
             </div>
             <div className="feature-box-visual">
@@ -96,10 +96,10 @@ export default function HomePage() {
 
           <div className="feature-box feature-box-medium">
             <div className="feature-box-content">
-              <h3>Assets Tracked</h3>
+              <h3>Schaalbare Asset Tracking</h3>
               <p>
-                Eén plek voor al je investeringen. Met PRO kun je tot 40 assets in één portfolio tracken.
-                Upgrade naar PRO+ voor onbeperkte asset tracking.
+                Van starter tot professionele portfolio's. Free-accounts zijn beperkt tot kennismaking.
+                PRO biedt uitgebreide tracking, Premium verwijdert alle limieten.
               </p>
             </div>
             <div className="feature-box-visual-small">
@@ -109,10 +109,10 @@ export default function HomePage() {
 
           <div className="feature-box feature-box-medium">
             <div className="feature-box-content">
-              <h3>Asset Analytics</h3>
+              <h3>Geavanceerde Inzichten</h3>
               <p>
-                Blijf voor op de curve met Asset Analytics. Krijg heldere verklaringen voor marktbewegingen
-                en zie insider trades, wat je de context geeft om vol vertrouwen te handelen.
+                Voor volledige inzichten is een upgrade vereist. PRO-gebruikers krijgen toegang tot
+                performance metrics en risico-analyse. Premium biedt diepgaande trends en optimalisatie-tools.
               </p>
             </div>
             <div className="feature-box-visual-small">

@@ -10,17 +10,17 @@ export default function UpgradePage() {
       name: "Free",
       price: "€0",
       period: "altijd gratis",
-      description: "Ideaal om te beginnen met portfolio tracking",
+      description: "Een eerste kennismaking met Portfallo",
       icon: TrendingUp,
       iconColor: "#64748b",
       features: [
-        "Tot 10 posities",
-        "Basis portfolio analytics",
-        "Performance tracking",
-        "CSV import (DeGiro)",
-        "Portfolio allocatie chart",
-        "Open & gesloten posities",
-        "Basis P/L rapportage"
+        "Tot 5 posities",
+        "Basis portfolio overzicht",
+        "Beperkte performance data",
+        "Geen closed positions inzichten",
+        "Geen geavanceerde analytics",
+        "Geen exports",
+        "Geen risico-analyse"
       ],
       cta: "Huidige plan",
       ctaVariant: "outline",
@@ -28,47 +28,48 @@ export default function UpgradePage() {
     },
     {
       name: "Pro",
-      price: "€9,99",
+      price: "€14,99",
       period: "per maand",
-      description: "Voor serieuze beleggers die hun portfolio optimaliseren",
+      description: "Voor beleggers die hun portfolio actief willen volgen",
       icon: Zap,
       iconColor: "#3b82f6",
       popular: true,
       features: [
-        "Onbeperkt aantal posities",
-        "AI-powered rebalancing advies",
-        "Geavanceerde risico analyse",
-        "Real-time koersen & alerts",
-        "Tax loss harvesting suggesties",
-        "Portfolio stress tests",
-        "Advanced performance metrics",
-        "Export naar Excel/PDF",
+        "Tot 40 posities",
+        "Volledige performance tracking",
+        "Allocation & basis analytics",
+        "Closed positions tracking",
+        "Rebalancing advies",
+        "Risico-overzicht",
+        "CSV export functionaliteit",
+        "Dagelijkse portfolio updates",
         "Email ondersteuning"
       ],
-      cta: "Start gratis proefperiode",
+      cta: "Kies Pro",
       ctaVariant: "primary",
       onClick: true
     },
     {
-      name: "Enterprise",
+      name: "Premium",
       price: "€29,99",
       period: "per maand",
-      description: "Voor professionele beleggers en vermogensbeheerders",
+      description: "Voor beleggers die diepgaand inzicht en maximale controle willen",
       icon: Crown,
       iconColor: "#f59e0b",
       features: [
         "Alles van Pro",
-        "Meerdere portfolio's beheren",
-        "Team collaboration tools",
-        "API toegang voor integraties",
-        "Custom rapportage & branding",
-        "Dedicated account manager",
+        "Onbeperkt aantal posities",
+        "Diepgaande analytics & trends",
+        "Geavanceerde performance metrics",
+        "Uitgebreide historische analyse",
+        "AI-powered portfolio optimalisatie",
+        "Advanced risk management tools",
         "Priority ondersteuning",
-        "Geavanceerde tax reporting",
-        "White-label optie beschikbaar"
+        "Exclusieve nieuwe features"
       ],
-      cta: "Contact opnemen",
-      ctaVariant: "secondary"
+      cta: "Kies Premium",
+      ctaVariant: "secondary",
+      onClick: true
     }
   ];
 
@@ -77,11 +78,10 @@ export default function UpgradePage() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Kies het juiste plan voor jou
+            Professioneel portfolio management
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Start gratis en upgrade wanneer je meer functionaliteit nodig hebt.
-            Alle betaalde plannen hebben een 14 dagen gratis proefperiode.
+            Kies het plan dat past bij jouw ambitie. Van kennismaking tot professionele controle.
           </p>
         </div>
 
