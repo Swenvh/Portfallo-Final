@@ -5,7 +5,9 @@ import PortfolioAllocationChart from "../components/PortfolioAllocationChart";
 import PortfolioPerformanceChart from "../components/PortfolioPerformanceChart";
 import ClosedPositionsTable from "../components/ClosedPositionsTable";
 import StockLogo from "../components/StockLogo";
+import DashboardPreview from "../components/DashboardPreview";
 import { usePortfolio } from "../context/PortfolioContext";
+import { usePremium } from "../context/PremiumContext";
 import { toTradingViewSymbol } from "../utils/tradingViewSymbol";
 import { Wallet, TrendingUp, Banknote, PieChart, ChevronDown, ChevronUp, Zap, ArrowRight } from "lucide-react";
 
@@ -16,7 +18,12 @@ function formatMoney(value, currency = "EUR") {
 
 export default function DashboardPage() {
   const { portfolio, loading, transactions } = usePortfolio();
+  const { isPremium } = usePremium();
   const [showClosedPositions, setShowClosedPositions] = useState(false);
+
+  if (!isPremium && !portfolio) {
+    return <DashboardPreview />;
+  }
 
   if (!portfolio && !loading) {
     return (

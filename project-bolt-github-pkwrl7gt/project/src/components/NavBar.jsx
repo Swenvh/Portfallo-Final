@@ -43,12 +43,12 @@ export default function Navbar() {
 
           {user && (
             <>
-              <NavLink to="/upload" className={linkClass}>
-                Upload
-              </NavLink>
-
               <NavLink to="/dashboard" className={linkClass}>
                 Dashboard
+              </NavLink>
+
+              <NavLink to="/upload" className={linkClass}>
+                Upload
               </NavLink>
 
               <NavLink to="/alerts" className={linkClass}>

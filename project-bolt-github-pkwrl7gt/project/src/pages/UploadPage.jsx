@@ -1,14 +1,21 @@
 import { useRef, useState } from "react";
+import { Navigate } from "react-router-dom";
 import PageContainer from "../components/PageContainer";
 import { usePortfolio } from "../context/PortfolioContext";
+import { usePremium } from "../context/PremiumContext";
 import { Upload, FileText, CheckCircle2, Loader2 } from "lucide-react";
 
 export default function UploadPage() {
   const inputRef = useRef(null);
   const { handleCSVUpload, loading } = usePortfolio();
+  const { isPremium } = usePremium();
 
   const [isDragging, setIsDragging] = useState(false);
   const [fileName, setFileName] = useState(null);
+
+  if (!isPremium) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   function handleFile(file) {
     if (!file) return;
