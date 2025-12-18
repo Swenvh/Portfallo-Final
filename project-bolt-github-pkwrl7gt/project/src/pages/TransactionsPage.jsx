@@ -1,6 +1,6 @@
 import React from "react";
 import { usePremium } from "../context/PremiumContext";
-import { Check, Zap, Crown, TrendingUp } from "lucide-react";
+import { Check, X, Zap, Crown, TrendingUp } from "lucide-react";
 
 export default function TransactionsPage() {
   const { setShowPaywall } = usePremium();
@@ -13,15 +13,6 @@ export default function TransactionsPage() {
       description: "Ideaal om te beginnen met portfolio tracking",
       icon: TrendingUp,
       iconColor: "#64748b",
-      features: [
-        "Tot 10 posities",
-        "Basis portfolio analytics",
-        "Performance tracking",
-        "CSV import (DeGiro)",
-        "Portfolio allocatie chart",
-        "Open & gesloten posities",
-        "Basis P/L rapportage"
-      ],
       cta: "Huidige plan",
       ctaVariant: "outline",
       disabled: true
@@ -34,17 +25,6 @@ export default function TransactionsPage() {
       icon: Zap,
       iconColor: "#3b82f6",
       popular: true,
-      features: [
-        "Onbeperkt aantal posities",
-        "AI-powered rebalancing advies",
-        "Geavanceerde risico analyse",
-        "Real-time koersen & alerts",
-        "Tax loss harvesting suggesties",
-        "Portfolio stress tests",
-        "Advanced performance metrics",
-        "Export naar Excel/PDF",
-        "Email ondersteuning"
-      ],
       cta: "Start gratis proefperiode",
       ctaVariant: "primary",
       onClick: true
@@ -56,20 +36,37 @@ export default function TransactionsPage() {
       description: "Voor professionele beleggers en vermogensbeheerders",
       icon: Crown,
       iconColor: "#f59e0b",
-      features: [
-        "Alles van Pro",
-        "Meerdere portfolio's beheren",
-        "Team collaboration tools",
-        "API toegang voor integraties",
-        "Custom rapportage & branding",
-        "Dedicated account manager",
-        "Priority ondersteuning",
-        "Geavanceerde tax reporting",
-        "White-label optie beschikbaar"
-      ],
       cta: "Contact opnemen",
-      ctaVariant: "secondary"
+      ctaVariant: "secondary",
+      onClick: true
     }
+  ];
+
+  const features = [
+    { name: "Tot 10 posities", free: true, pro: false, enterprise: false },
+    { name: "Onbeperkt aantal posities", free: false, pro: true, enterprise: true },
+    { name: "Basis portfolio analytics", free: true, pro: true, enterprise: true },
+    { name: "Performance tracking", free: true, pro: true, enterprise: true },
+    { name: "CSV import (DeGiro)", free: true, pro: true, enterprise: true },
+    { name: "Portfolio allocatie chart", free: true, pro: true, enterprise: true },
+    { name: "Open & gesloten posities", free: true, pro: true, enterprise: true },
+    { name: "Basis P/L rapportage", free: true, pro: true, enterprise: true },
+    { name: "AI-powered rebalancing advies", free: false, pro: true, enterprise: true },
+    { name: "Geavanceerde risico analyse", free: false, pro: true, enterprise: true },
+    { name: "Real-time koersen & alerts", free: false, pro: true, enterprise: true },
+    { name: "Tax loss harvesting suggesties", free: false, pro: true, enterprise: true },
+    { name: "Portfolio stress tests", free: false, pro: true, enterprise: true },
+    { name: "Advanced performance metrics", free: false, pro: true, enterprise: true },
+    { name: "Export naar Excel/PDF", free: false, pro: true, enterprise: true },
+    { name: "Email ondersteuning", free: false, pro: true, enterprise: true },
+    { name: "Meerdere portfolio's beheren", free: false, pro: false, enterprise: true },
+    { name: "Team collaboration tools", free: false, pro: false, enterprise: true },
+    { name: "API toegang voor integraties", free: false, pro: false, enterprise: true },
+    { name: "Custom rapportage & branding", free: false, pro: false, enterprise: true },
+    { name: "Dedicated account manager", free: false, pro: false, enterprise: true },
+    { name: "Priority ondersteuning", free: false, pro: false, enterprise: true },
+    { name: "Geavanceerde tax reporting", free: false, pro: false, enterprise: true },
+    { name: "White-label optie beschikbaar", free: false, pro: false, enterprise: true }
   ];
 
   return (
@@ -85,57 +82,92 @@ export default function TransactionsPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="mb-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="hidden md:block"></div>
+
           {plans.map((plan, index) => {
             const IconComponent = plan.icon;
             return (
               <div
                 key={index}
-                className={`pricing-card ${plan.popular ? 'pricing-card-popular' : ''}`}
+                className={`bg-white rounded-lg border-2 p-6 ${
+                  plan.popular ? 'border-blue-500 shadow-lg' : 'border-slate-200'
+                }`}
               >
                 {plan.popular && (
-                  <div className="pricing-badge">
+                  <div className="text-xs font-semibold text-blue-600 mb-2">
                     Meest populair
                   </div>
                 )}
 
-                <div className="pricing-header">
-                  <div
-                    className="pricing-icon"
-                    style={{ background: `linear-gradient(135deg, ${plan.iconColor}15, ${plan.iconColor}30)` }}
-                  >
-                    <IconComponent size={32} style={{ color: plan.iconColor }} />
-                  </div>
-                  <h3 className="pricing-title">{plan.name}</h3>
-                  <p className="pricing-description">{plan.description}</p>
-
-                  <div className="pricing-price-section">
-                    <div className="pricing-price">{plan.price}</div>
-                    <div className="pricing-period">{plan.period}</div>
-                  </div>
+                <div
+                  className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center"
+                  style={{ background: `linear-gradient(135deg, ${plan.iconColor}15, ${plan.iconColor}30)` }}
+                >
+                  <IconComponent size={24} style={{ color: plan.iconColor }} />
                 </div>
 
-                <div className="pricing-features">
-                  {plan.features.map((feature, i) => (
-                    <div key={i} className="pricing-feature">
-                      <Check size={18} className="pricing-check" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
+                <h3 className="text-xl font-bold text-slate-900 mb-1">{plan.name}</h3>
+                <p className="text-sm text-slate-600 mb-4">{plan.description}</p>
+
+                <div className="mb-4">
+                  <div className="text-3xl font-bold text-slate-900">{plan.price}</div>
+                  <div className="text-sm text-slate-600">{plan.period}</div>
                 </div>
 
-                <div className="pricing-footer">
-                  <button
-                    className={`pricing-cta pricing-cta-${plan.ctaVariant} ${plan.disabled ? 'pricing-cta-disabled' : ''}`}
-                    onClick={plan.onClick ? () => setShowPaywall(true) : undefined}
-                    disabled={plan.disabled}
-                  >
-                    {plan.cta}
-                  </button>
-                </div>
+                <button
+                  className={`w-full py-2.5 px-4 rounded-lg font-semibold transition-colors ${
+                    plan.ctaVariant === 'primary'
+                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      : plan.ctaVariant === 'secondary'
+                      ? 'bg-amber-600 text-white hover:bg-amber-700'
+                      : 'bg-white text-slate-700 border-2 border-slate-300 hover:border-slate-400'
+                  } ${plan.disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  onClick={plan.onClick ? () => setShowPaywall(true) : undefined}
+                  disabled={plan.disabled}
+                >
+                  {plan.cta}
+                </button>
               </div>
             );
           })}
+        </div>
+
+        <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-1 md:grid-cols-4 border-b border-slate-100 hover:bg-slate-50 transition-colors"
+            >
+              <div className="px-6 py-4 font-medium text-slate-700">
+                {feature.name}
+              </div>
+
+              <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                {feature.free ? (
+                  <Check size={20} className="text-blue-600" />
+                ) : (
+                  <X size={20} className="text-slate-300" />
+                )}
+              </div>
+
+              <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                {feature.pro ? (
+                  <Check size={20} className="text-blue-600" />
+                ) : (
+                  <X size={20} className="text-slate-300" />
+                )}
+              </div>
+
+              <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                {feature.enterprise ? (
+                  <Check size={20} className="text-blue-600" />
+                ) : (
+                  <X size={20} className="text-slate-300" />
+                )}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-16 text-center">
