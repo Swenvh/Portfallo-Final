@@ -1,35 +1,35 @@
 import { Link } from "react-router-dom";
-import { TrendingUp, Upload, BarChart3, Shield, Zap, Target, Eye } from "lucide-react";
+import { TrendingUp, Upload, BarChart3, Shield, Zap, Target, Eye, Sparkles, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   return (
     <div className="home-page">
-      <section className="hero-section">
+      <section className="hero-section-modern">
         <div className="hero-content">
-          <div className="hero-badge">
-            <Zap size={16} />
-            <span>Portfolio Management Platform</span>
+          <div className="hero-badge-modern">
+            <Sparkles size={16} />
+            <span>Smart Portfolio Management</span>
           </div>
 
-          <h1 className="hero-title-stripe">
-            <span className="text-dark">Financiële</span>{" "}
-            <span className="text-blue">infrastructuur</span>
+          <h1 className="hero-title-modern">
+            Jouw portfolio,
             <br />
-            <span className="text-orange">voor meer</span>{" "}
-            <span className="text-dark">omzet</span>
+            <span className="gradient-text-modern">volledig onder controle</span>
           </h1>
 
-          <p className="hero-subtitle">
+          <p className="hero-subtitle-modern">
             Analyseer je beleggingen, track performance in real-time en krijg waardevolle inzichten
             om betere beslissingen te maken. Alles wat je nodig hebt op één plek.
           </p>
 
-          <div className="hero-cta-stripe">
-            <Link to="/upload" className="btn-explore">
-              Explore Plans
+          <div className="hero-cta-modern">
+            <Link to="/upload" className="btn-primary-modern">
+              <span>Start nu</span>
+              <ArrowRight size={20} />
             </Link>
-            <Link to="/demo" className="btn-features">
-              See Features
+            <Link to="/demo" className="btn-secondary-modern">
+              <Eye size={20} />
+              <span>Bekijk demo</span>
             </Link>
           </div>
 
