@@ -141,21 +141,25 @@ h3 {
 }
 
 /* =========================
-   NAVBAR POLISH
+   NAVBAR POLISH - DELTA STYLE
 ========================= */
 
 header {
-  background: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, #2d1b69 0%, #1a0f3e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px) saturate(180%);
   position: sticky;
   top: 0;
   z-index: 40;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  background: transparent;
 }
 
 nav a {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
@@ -163,11 +167,11 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--primary);
+  color: white;
 }
 
 nav a.active {
-  color: var(--primary);
+  color: white;
 }
 
 nav a.active::after {
@@ -177,26 +181,26 @@ nav a.active::after {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--primary);
+  background: white;
   border-radius: 1px;
 }
 
 .nav-upgrade {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: white;
+  background: linear-gradient(135deg, #d4af37 0%, #f0d478 100%);
+  color: #1e293b;
   padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 50px;
+  font-weight: 700;
   font-size: 0.875rem;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
 .nav-upgrade:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
 }
 
 /* =========================
