@@ -131,7 +131,7 @@ export default function RegisterPage() {
             src="/image.png"
             alt="Portfallo Logo"
             style={{
-              height: '56px',
+              height: '64px',
               width: 'auto',
               marginBottom: '1.5rem'
             }}
