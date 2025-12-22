@@ -17,12 +17,12 @@ export default function FinalCTA() {
           Ontgrendel Portfallo
         </Link>
 
-        <p className="final-cta-microcopy">
-          Start je proefperiode via onze prijsplannen
-        </p>
-
         <p className="final-cta-trust">
           Vertrouwd door 10.000+ beleggers die hun portfolio serieus nemen.
+        </p>
+
+        <p className="final-cta-microcopy">
+          Start via onze prijsplannen
         </p>
       </div>
     </section>

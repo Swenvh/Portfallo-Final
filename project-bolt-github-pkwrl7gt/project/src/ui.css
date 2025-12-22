@@ -257,22 +257,22 @@
 .final-cta-section {
   position: relative;
   width: 100%;
-  min-height: 90vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1.5rem;
-  background: #F8F9FA;
+  padding: 6rem 1.5rem;
+  background: #FAFBFC;
 }
 
 .final-cta-card {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 560px;
   background: #FFFFFF;
   border-radius: 20px;
-  padding: 4rem 3rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 4rem 3.5rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
   text-align: center;
 }
 
@@ -298,7 +298,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1rem 2.5rem;
+  padding: 1.0625rem 2.5rem;
   font-size: 1.0625rem;
   font-weight: 600;
   color: #FFFFFF;
@@ -308,7 +308,7 @@
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease;
   text-decoration: none;
-  margin-bottom: 0.875rem;
+  margin-bottom: 1.25rem;
 }
 
 .final-cta-button:hover {
@@ -316,30 +316,30 @@
   transform: translateY(-1px);
 }
 
-.final-cta-microcopy {
-  font-size: 0.875rem;
-  color: #6B6B6E;
-  margin: 0 0 2rem 0;
-  font-weight: 400;
-}
-
 .final-cta-trust {
   font-size: 0.875rem;
-  color: #8A8A8D;
-  margin: 0;
+  color: #6B6B6E;
+  margin: 0 0 0.75rem 0;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.final-cta-microcopy {
+  font-size: 0.8125rem;
+  color: #9CA3AF;
+  margin: 0;
+  font-weight: 400;
 }
 
 @media (max-width: 768px) {
   .final-cta-section {
     padding: 4rem 1rem;
-    min-height: 90vh;
+    min-height: 500px;
   }
 
   .final-cta-card {
-    max-width: 400px;
-    padding: 3rem 2rem;
+    max-width: 420px;
+    padding: 3rem 2.25rem;
     border-radius: 16px;
   }
 
@@ -356,9 +356,10 @@
   .final-cta-button {
     padding: 0.9375rem 2rem;
     font-size: 1rem;
+    margin-bottom: 1rem;
   }
 
-  .final-cta-microcopy {
-    margin-bottom: 1.75rem;
+  .final-cta-trust {
+    margin-bottom: 0.625rem;
   }
 }
