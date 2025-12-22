@@ -5,9 +5,17 @@ const PremiumContext = createContext();
 export function PremiumProvider({ children }) {
   const [isPremium, setIsPremium] = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("Pro");
 
   return (
-    <PremiumContext.Provider value={{ isPremium, setIsPremium, showPaywall, setShowPaywall }}>
+    <PremiumContext.Provider value={{
+      isPremium,
+      setIsPremium,
+      showPaywall,
+      setShowPaywall,
+      selectedPlan,
+      setSelectedPlan
+    }}>
       {children}
     </PremiumContext.Provider>
   );

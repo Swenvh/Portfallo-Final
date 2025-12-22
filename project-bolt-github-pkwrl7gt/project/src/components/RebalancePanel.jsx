@@ -8,7 +8,7 @@ export default function RebalancePanel() {
   const portfolio = usePortfolio?.() || {};
   const { holdings = [] } = portfolio;
   const premium = usePremium?.() || {};
-  const { isPremium, setShowPaywall } = premium;
+  const { isPremium, setShowPaywall, setSelectedPlan } = premium;
 
   // simple mock: if top holding > 20% suggest partial sell
   const top = holdings && holdings.length ? holdings.slice().sort((a,b)=> (b.value||0)-(a.value||0))[0] : null;
@@ -30,7 +30,10 @@ export default function RebalancePanel() {
       <div className="bg-white rounded-xl shadow p-4 text-center">
         <div className="font-semibold mb-2">Rebalance Voorstel (Pro)</div>
         <div className="text-sm text-gray-600">Ontgrendel Pro om volledige acties te zien</div>
-        <button onClick={() => setShowPaywall && setShowPaywall(true)} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Ontgrendel Pro</button>
+        <button onClick={() => {
+          setSelectedPlan && setSelectedPlan("Pro");
+          setShowPaywall && setShowPaywall(true);
+        }} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Ontgrendel Pro</button>
       </div>
     );
   }

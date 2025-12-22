@@ -4,6 +4,7 @@ import Navbar from "./components/NavBar";
 import PaywallModal from "./components/PaywallModal";
 import AuthProtectedRoute from "./components/AuthProtectedRoute";
 import { seedInitialPrices } from "./services/seedPrices";
+import { usePremium } from "./context/PremiumContext";
 
 import HomePage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";
@@ -17,6 +18,8 @@ import TransactionsPage from "./pages/TransactionsPage";
 import UpgradePage from "./pages/UpgradePage";
 
 export default function App() {
+  const { selectedPlan } = usePremium();
+
   useEffect(() => {
     const initPrices = async () => {
       const seeded = localStorage.getItem('prices_seeded');
@@ -35,7 +38,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <PaywallModal />
+      <PaywallModal plan={selectedPlan} />
 
       <Routes>
         <Route path="/login" element={<LoginPage />} />

@@ -3,8 +3,13 @@ import { usePremium } from "../context/PremiumContext";
 import { Check, X, Zap, Crown, TrendingUp } from "lucide-react";
 
 export default function UpgradePage() {
-  const { setShowPaywall } = usePremium();
+  const { setShowPaywall, setSelectedPlan } = usePremium();
   const [isYearly, setIsYearly] = useState(true);
+
+  const handlePlanSelect = (planName) => {
+    setSelectedPlan(planName);
+    setShowPaywall(true);
+  };
 
   const plans = [
     {
@@ -212,7 +217,7 @@ export default function UpgradePage() {
                       ? 'bg-amber-600 text-white hover:bg-amber-700 shadow-md hover:shadow-lg'
                       : 'bg-slate-50 text-slate-700 border-2 border-slate-300 hover:bg-slate-100 hover:border-slate-400'
                   } ${plan.disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  onClick={plan.onClick ? () => setShowPaywall(true) : undefined}
+                  onClick={plan.onClick ? () => handlePlanSelect(plan.name) : undefined}
                   disabled={plan.disabled}
                 >
                   {plan.cta}

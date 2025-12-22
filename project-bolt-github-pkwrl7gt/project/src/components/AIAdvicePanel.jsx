@@ -5,7 +5,7 @@ import { toTradingViewSymbol } from "../utils/tradingViewSymbol";
 
 export default function AIAdvicePanel({ holdings = [] }) {
   const premium = usePremium?.() || {};
-  const { isPremium, setShowPaywall } = premium;
+  const { isPremium, setShowPaywall, setSelectedPlan } = premium;
 
   if (!isPremium) {
     return (
@@ -13,7 +13,10 @@ export default function AIAdvicePanel({ holdings = [] }) {
         <h4 className="font-semibold mb-2">AI-advies (Pro)</h4>
         <p className="text-sm text-gray-600">Ontgrendel Pro voor gepersonaliseerde optimalisatie.</p>
         <button
-          onClick={() => setShowPaywall && setShowPaywall(true)}
+          onClick={() => {
+            setSelectedPlan && setSelectedPlan("Pro");
+            setShowPaywall && setShowPaywall(true);
+          }}
           className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
         >
           Ontgrendel Pro

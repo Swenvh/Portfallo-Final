@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { PieChart, LogOut, User } from "lucide-react";
 
 export default function Navbar() {
-  const { setShowPaywall } = usePremium();
+  const { setShowPaywall, setSelectedPlan } = usePremium();
   const { user, signOut } = useAuth();
 
   const linkClass = ({ isActive }) =>
@@ -18,6 +18,11 @@ export default function Navbar() {
     } catch (error) {
       console.error('Error signing out:', error);
     }
+  };
+
+  const handleUpgrade = () => {
+    setSelectedPlan("Pro");
+    setShowPaywall(true);
   };
 
   return (
@@ -64,7 +69,7 @@ export default function Navbar() {
           {user ? (
             <>
               <button
-                onClick={() => setShowPaywall(true)}
+                onClick={handleUpgrade}
                 className="nav-upgrade ml-4"
               >
                 Upgrade
@@ -99,7 +104,7 @@ export default function Navbar() {
           {user ? (
             <>
               <button
-                onClick={() => setShowPaywall(true)}
+                onClick={handleUpgrade}
                 className="nav-upgrade"
               >
                 Upgrade
