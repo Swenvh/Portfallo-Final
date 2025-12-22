@@ -1,7 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import { usePremium } from "../context/PremiumContext";
 import { useAuth } from "../context/AuthContext";
-import { PieChart, LogOut, User } from "lucide-react";
+import { LogOut, User } from "lucide-react";
 
 export default function Navbar() {
   const { setShowPaywall, setSelectedPlan } = usePremium();
@@ -28,11 +28,13 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b bg-white">
       <div className="w-full px-4 md:px-8 lg:px-12 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-            <PieChart size={20} className="text-white" strokeWidth={2.5} />
-          </div>
-          <span className="font-bold text-xl tracking-tight text-slate-800">
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src="/image.png"
+            alt="Portfallo Logo"
+            className="h-9 w-auto"
+          />
+          <span className="font-bold text-xl tracking-tight text-slate-900">
             Portfallo
           </span>
         </Link>

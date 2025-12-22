@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { PieChart, Mail, AlertCircle, Loader, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Mail, AlertCircle, Loader, CheckCircle, ArrowLeft } from 'lucide-react';
 
 export default function ForgotPasswordPage() {
   const { resetPassword } = useAuth();
@@ -129,19 +129,15 @@ export default function ForgotPasswordPage() {
           alignItems: 'center',
           marginBottom: '2rem'
         }}>
-          <div style={{
-            width: '64px',
-            height: '64px',
-            borderRadius: '16px',
-            background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '1.5rem',
-            boxShadow: '0 8px 24px rgba(59, 130, 246, 0.3)'
-          }}>
-            <PieChart size={32} style={{ color: 'white' }} strokeWidth={2.5} />
-          </div>
+          <img
+            src="/image.png"
+            alt="Portfallo Logo"
+            style={{
+              height: '56px',
+              width: 'auto',
+              marginBottom: '1.5rem'
+            }}
+          />
           <h1 style={{
             fontSize: '1.875rem',
             fontWeight: 700,
