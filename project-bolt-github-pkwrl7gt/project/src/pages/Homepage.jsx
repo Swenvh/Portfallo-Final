@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { TrendingUp, Upload, BarChart3, Shield, Target, Eye, Sparkles, ArrowRight, PieChart, LineChart } from "lucide-react";
 import HomepageDashboardPreview from "../components/HomepageDashboardPreview";
+import FinalCTA from "../components/FinalCTA";
 
 export default function HomePage() {
   return (
@@ -136,6 +137,8 @@ export default function HomePage() {
       </section>
 
       <HomepageDashboardPreview />
+
+      <FinalCTA />
     </div>
   );
 }
