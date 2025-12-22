@@ -9,8 +9,8 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     isActive
-      ? "text-primary font-semibold"
-      : "text-text-secondary hover:text-primary";
+      ? "text-slate-900 font-medium"
+      : "text-slate-600 hover:text-slate-900 transition-colors";
 
   const handleLogout = async () => {
     try {
@@ -26,20 +26,21 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white">
-      <div className="w-full px-4 md:px-8 lg:px-12 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
+      <div className="w-full px-6 md:px-8 h-[80px] flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img
             src="/image.png"
             alt="Portfallo Logo"
-            className="brand-logo h-11 md:h-[56px] lg:h-[60px] w-auto"
+            className="h-9 md:h-[42px] w-auto block"
+            style={{ display: 'block' }}
           />
-          <span className="font-medium text-xl md:text-[22px] lg:text-2xl tracking-wide text-slate-950">
+          <span className="font-semibold text-lg md:text-xl tracking-tight text-slate-900">
             Portfallo
           </span>
         </Link>
 
-        <nav className="hidden md:flex gap-8 text-sm items-center">
+        <nav className="hidden md:flex gap-7 text-sm items-center font-medium">
           <NavLink to="/" className={linkClass}>
             Home
           </NavLink>
@@ -72,13 +73,13 @@ export default function Navbar() {
             <>
               <button
                 onClick={handleUpgrade}
-                className="nav-upgrade ml-4"
+                className="ml-2 px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-colors text-sm font-medium"
               >
                 Upgrade
               </button>
 
               <div className="flex items-center gap-3 ml-2 pl-4 border-l border-slate-200">
-                <div className="flex items-center gap-2 text-sm text-slate-700">
+                <div className="flex items-center gap-2 text-sm text-slate-600">
                   <User size={16} />
                   <span>{user.email?.split('@')[0]}</span>
                 </div>
@@ -95,7 +96,7 @@ export default function Navbar() {
           ) : (
             <Link
               to="/login"
-              className="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="ml-2 px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-colors font-medium text-sm"
             >
               Inloggen
             </Link>
@@ -107,13 +108,13 @@ export default function Navbar() {
             <>
               <button
                 onClick={handleUpgrade}
-                className="nav-upgrade"
+                className="px-3 py-1.5 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-colors text-sm font-medium"
               >
                 Upgrade
               </button>
               <button
                 onClick={handleLogout}
-                className="text-slate-600 hover:text-slate-900"
+                className="text-slate-600 hover:text-slate-900 p-2"
                 title="Uitloggen"
               >
                 <LogOut size={20} />
@@ -122,7 +123,7 @@ export default function Navbar() {
           ) : (
             <Link
               to="/login"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+              className="px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-colors font-medium text-sm"
             >
               Inloggen
             </Link>
