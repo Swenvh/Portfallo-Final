@@ -27,14 +27,14 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b bg-white">
-      <div className="w-full px-4 md:px-8 lg:px-12 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-4 group">
+      <div className="w-full px-4 md:px-8 lg:px-12 h-20 md:h-24 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-5 group">
           <img
             src="/image.png"
             alt="Portfallo Logo"
-            className="h-11 md:h-14 w-auto"
+            className="brand-logo h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto"
           />
-          <span className="font-semibold text-lg md:text-xl tracking-wide text-slate-900">
+          <span className="font-semibold text-base md:text-lg tracking-wide text-slate-950">
             Portfallo
           </span>
         </Link>
