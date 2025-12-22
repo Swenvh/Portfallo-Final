@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { usePremium } from "../context/PremiumContext";
 import { Check, X, Zap, Crown, TrendingUp } from "lucide-react";
 
 export default function UpgradePage() {
   const { setShowPaywall } = usePremium();
+  const [isYearly, setIsYearly] = useState(true);
 
   const plans = [
     {
       name: "Start",
-      price: "€9,99",
-      period: "per maand",
+      monthlyPrice: "€9,99",
+      yearlyPrice: "€95,90",
+      monthlyEquivalent: "€7,99",
       description: "Ideaal om Portfallo te ontdekken en je portfolio overzichtelijk bij te houden.",
       icon: TrendingUp,
       iconColor: "#64748b",
@@ -20,8 +22,9 @@ export default function UpgradePage() {
     },
     {
       name: "Pro",
-      price: "€19,99",
-      period: "per maand",
+      monthlyPrice: "€19,99",
+      yearlyPrice: "€191,90",
+      monthlyEquivalent: "€15,99",
       description: "Voor actieve beleggers die hun portfolio willen optimaliseren met inzichten en analytics.",
       icon: Zap,
       iconColor: "#3b82f6",
@@ -32,8 +35,9 @@ export default function UpgradePage() {
     },
     {
       name: "Premium",
-      price: "€34,99",
-      period: "per maand",
+      monthlyPrice: "€34,99",
+      yearlyPrice: "€335,90",
+      monthlyEquivalent: "€27,99",
       description: "Voor beleggers die maximale controle, geavanceerde analyses en AI-ondersteuning willen.",
       icon: Crown,
       iconColor: "#f59e0b",
@@ -109,13 +113,44 @@ export default function UpgradePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Professioneel portfolio management
+            Kies het plan dat bij je past
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
-            Kies het plan dat past bij jouw beleggingsstijl.<br />
-            Alle plannen starten met een 7-daagse proefperiode. Geen creditcard nodig.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+            Alle plannen starten met een 7-daagse proefperiode met volledige toegang.<br />
+            Geen creditcard nodig.
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center mb-12">
+          <div className="inline-flex items-center bg-white rounded-full p-1 shadow-md border-2 border-slate-200 mb-3">
+            <button
+              onClick={() => setIsYearly(false)}
+              className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all ${
+                !isYearly
+                  ? 'bg-slate-900 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Maandelijks
+            </button>
+            <button
+              onClick={() => setIsYearly(true)}
+              className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all flex items-center gap-2 ${
+                isYearly
+                  ? 'bg-slate-900 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Jaarlijks
+              <span className="bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                Bespaar 20%
+              </span>
+            </button>
+          </div>
+          <p className="text-sm text-slate-500 font-medium">
+            Jaarlijks is het voordeligst
           </p>
         </div>
 
@@ -148,12 +183,21 @@ export default function UpgradePage() {
                 <p className="text-sm text-slate-600 mb-6 leading-relaxed min-h-[60px]">{plan.description}</p>
 
                 <div className="mb-6">
-                  <div className="text-4xl font-bold text-slate-900">{plan.price}</div>
-                  <div className="text-sm text-slate-500 mt-1">{plan.period}</div>
+                  <div className="text-4xl font-bold text-slate-900">
+                    {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                  </div>
+                  <div className="text-sm text-slate-500 mt-1">
+                    {isYearly ? 'per jaar' : 'per maand'}
+                  </div>
+                  {isYearly && (
+                    <div className="text-xs text-slate-400 mt-1">
+                      ≈ {plan.monthlyEquivalent} per maand
+                    </div>
+                  )}
                 </div>
 
                 <button
-                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all mt-auto ${
+                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all ${
                     plan.ctaVariant === 'primary'
                       ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg'
                       : plan.ctaVariant === 'secondary'
@@ -165,6 +209,9 @@ export default function UpgradePage() {
                 >
                   {plan.cta}
                 </button>
+                <p className="text-xs text-slate-500 text-center mt-3">
+                  Volledige toegang · geen creditcard
+                </p>
               </div>
             );
           })}
