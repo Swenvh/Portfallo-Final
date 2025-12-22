@@ -57,7 +57,7 @@ export default function Navbar() {
             </>
           )}
 
-          <NavLink to="/transactions" className={linkClass}>
+          <NavLink to="/pricing" className={linkClass}>
             Pricing
           </NavLink>
 
