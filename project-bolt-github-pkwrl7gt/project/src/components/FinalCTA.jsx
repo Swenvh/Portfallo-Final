@@ -24,7 +24,7 @@ export default function FinalCTA() {
           </div>
 
           <p className="final-cta-social-proof">
-            Vertrouwd door 10.000+ beleggers die hun portfolio serieus nemen
+            Gebruikt door 10.000+ beleggers
           </p>
         </div>
 
