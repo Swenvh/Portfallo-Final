@@ -119,7 +119,7 @@ export default function UpgradePage() {
           </p>
         </div>
 
-        <div className="mb-16 md:mb-20 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
+        <div className="mb-12 md:mb-14 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
           <div className="hidden md:block"></div>
 
           {plans.map((plan, index) => {
@@ -170,6 +170,17 @@ export default function UpgradePage() {
               </div>
             );
           })}
+        </div>
+
+        <div className="relative mb-8 md:mb-10">
+          <div className="absolute inset-0 flex items-center" aria-hidden="true">
+            <div className="w-full border-t border-slate-200"></div>
+          </div>
+          <div className="relative flex justify-center">
+            <span className="bg-gradient-to-br from-slate-50 to-blue-50 px-6 py-2 text-sm font-semibold text-slate-600 tracking-wide">
+              Vergelijk alle functies
+            </span>
+          </div>
         </div>
 
         <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
