@@ -43,6 +43,7 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
         <Route path="/upgrade" element={<UpgradePage />} />
+        <Route path="/pricing" element={<UpgradePage />} />
         <Route path="/transactions" element={<TransactionsPage />} />
 
         <Route path="/" element={<HomePage />} />
