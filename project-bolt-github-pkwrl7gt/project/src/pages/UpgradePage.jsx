@@ -90,28 +90,36 @@ export default function UpgradePage() {
 
   const renderFeatureValue = (value) => {
     if (value === true) {
-      return <Check size={20} className="text-blue-600" />;
+      return (
+        <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+          <Check size={16} className="text-blue-600" strokeWidth={3} />
+        </div>
+      );
     }
     if (value === false) {
-      return <X size={20} className="text-slate-300" />;
+      return (
+        <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center">
+          <X size={16} className="text-slate-400" strokeWidth={2} />
+        </div>
+      );
     }
-    return <span className="text-sm text-slate-600">{value}</span>;
+    return <span className="text-sm font-medium text-slate-700">{value}</span>;
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
+        <div className="text-center mb-16 md:mb-20">
+          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
             Professioneel portfolio management
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
             Kies het plan dat past bij jouw beleggingsstijl.<br />
             Alle plannen starten met een 7-daagse proefperiode. Geen creditcard nodig.
           </p>
         </div>
 
-        <div className="mb-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="mb-16 md:mb-20 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
           <div className="hidden md:block"></div>
 
           {plans.map((plan, index) => {
@@ -119,38 +127,40 @@ export default function UpgradePage() {
             return (
               <div
                 key={index}
-                className={`bg-white rounded-lg border-2 p-6 ${
-                  plan.popular ? 'border-blue-500 shadow-lg' : 'border-slate-200'
+                className={`bg-white rounded-xl border-2 p-7 flex flex-col relative transition-all ${
+                  plan.popular
+                    ? 'border-blue-600 shadow-xl shadow-blue-100 scale-[1.02]'
+                    : 'border-slate-200 hover:border-slate-300 shadow-sm'
                 }`}
               >
                 {plan.popular && (
-                  <div className="text-xs font-semibold text-blue-600 mb-2">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold shadow-md">
                     Meest populair
                   </div>
                 )}
 
                 <div
-                  className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center"
+                  className="w-14 h-14 rounded-xl mb-5 flex items-center justify-center"
                   style={{ background: `linear-gradient(135deg, ${plan.iconColor}15, ${plan.iconColor}30)` }}
                 >
-                  <IconComponent size={24} style={{ color: plan.iconColor }} />
+                  <IconComponent size={26} style={{ color: plan.iconColor }} strokeWidth={2} />
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{plan.name}</h3>
-                <p className="text-sm text-slate-600 mb-4">{plan.description}</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                <p className="text-sm text-slate-600 mb-6 leading-relaxed min-h-[60px]">{plan.description}</p>
 
-                <div className="mb-4">
-                  <div className="text-3xl font-bold text-slate-900">{plan.price}</div>
-                  <div className="text-sm text-slate-600">{plan.period}</div>
+                <div className="mb-6">
+                  <div className="text-4xl font-bold text-slate-900">{plan.price}</div>
+                  <div className="text-sm text-slate-500 mt-1">{plan.period}</div>
                 </div>
 
                 <button
-                  className={`w-full py-2.5 px-4 rounded-lg font-semibold transition-colors ${
+                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all mt-auto ${
                     plan.ctaVariant === 'primary'
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg'
                       : plan.ctaVariant === 'secondary'
-                      ? 'bg-amber-600 text-white hover:bg-amber-700'
-                      : 'bg-white text-slate-700 border-2 border-slate-300 hover:border-slate-400'
+                      ? 'bg-amber-600 text-white hover:bg-amber-700 shadow-md hover:shadow-lg'
+                      : 'bg-slate-50 text-slate-700 border-2 border-slate-300 hover:bg-slate-100 hover:border-slate-400'
                   } ${plan.disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
                   onClick={plan.onClick ? () => setShowPaywall(true) : undefined}
                   disabled={plan.disabled}
@@ -162,31 +172,38 @@ export default function UpgradePage() {
           })}
         </div>
 
-        <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+        <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+          <div className="hidden md:grid grid-cols-4 gap-4 px-6 py-5 bg-slate-50 border-b border-slate-200">
+            <div className="font-semibold text-slate-600 text-sm uppercase tracking-wide">Functies</div>
+            <div className="font-semibold text-slate-900 text-center">Start</div>
+            <div className="font-semibold text-slate-900 text-center">Pro</div>
+            <div className="font-semibold text-slate-900 text-center">Premium</div>
+          </div>
+
           {featureCategories.map((category, catIndex) => (
             <div key={catIndex}>
-              <div className="bg-slate-50 px-6 py-3 border-b border-slate-200">
-                <h4 className="font-semibold text-slate-900">{category.category}</h4>
+              <div className="bg-gradient-to-r from-slate-50 to-slate-50/50 px-6 py-4 border-b border-slate-200">
+                <h4 className="font-bold text-slate-900 text-base">{category.category}</h4>
               </div>
 
               {category.features.map((feature, featIndex) => (
                 <div
                   key={featIndex}
-                  className="grid grid-cols-1 md:grid-cols-4 border-b border-slate-100 hover:bg-slate-50 transition-colors"
+                  className="grid grid-cols-1 md:grid-cols-4 gap-4 px-6 py-4 border-b border-slate-100 last:border-b-0 hover:bg-slate-50/50 transition-colors"
                 >
-                  <div className="px-6 py-4 font-medium text-slate-700">
+                  <div className="font-medium text-slate-700 text-sm md:text-base">
                     {feature.name}
                   </div>
 
-                  <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                  <div className="flex items-center justify-start md:justify-center">
                     {renderFeatureValue(feature.free)}
                   </div>
 
-                  <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                  <div className="flex items-center justify-start md:justify-center">
                     {renderFeatureValue(feature.pro)}
                   </div>
 
-                  <div className="px-6 py-4 flex items-center justify-center md:justify-start">
+                  <div className="flex items-center justify-start md:justify-center">
                     {renderFeatureValue(feature.premium)}
                   </div>
                 </div>
@@ -195,10 +212,11 @@ export default function UpgradePage() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-slate-600 mb-4">Heb je vragen over welk plan het beste bij je past?</p>
-          <a href="mailto:support@portfallo.com" className="text-blue-600 hover:text-blue-700 font-semibold">
-            Neem contact met ons op →
+        <div className="mt-20 text-center">
+          <p className="text-lg text-slate-600 mb-3">Heb je vragen over welk plan het beste bij je past?</p>
+          <a href="mailto:support@portfallo.com" className="text-blue-600 hover:text-blue-700 font-semibold text-base inline-flex items-center gap-1 transition-colors">
+            Neem contact met ons op
+            <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
           </a>
         </div>
       </div>
