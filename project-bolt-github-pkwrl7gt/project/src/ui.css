@@ -261,35 +261,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1.5rem;
-  background: #0B0F14;
+  padding: 5rem 1.5rem;
+  background: #F8F9FA;
 }
 
 .final-cta-card {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   background: #FFFFFF;
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
 .final-cta-headline {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
   color: #1A1A1D;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
   letter-spacing: -0.02em;
 }
 
 .final-cta-subtext {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   color: #4A4A4D;
-  margin: 0 0 2rem 0;
+  margin: 0 0 2.5rem 0;
   font-weight: 400;
 }
 
@@ -298,60 +298,67 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   font-size: 1.0625rem;
   font-weight: 600;
   color: #FFFFFF;
   background: #2DD4BF;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
   text-decoration: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.875rem;
 }
 
 .final-cta-button:hover {
   background: #14B8A6;
+  transform: translateY(-1px);
 }
 
 .final-cta-microcopy {
   font-size: 0.875rem;
   color: #6B6B6E;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   font-weight: 400;
 }
 
-.final-cta-social-proof {
-  font-size: 0.8125rem;
+.final-cta-trust {
+  font-size: 0.875rem;
   color: #8A8A8D;
   margin: 0;
   font-weight: 400;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
   .final-cta-section {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     min-height: 90vh;
   }
 
   .final-cta-card {
-    max-width: 380px;
-    padding: 2.5rem 2rem;
+    max-width: 400px;
+    padding: 3rem 2rem;
+    border-radius: 16px;
   }
 
   .final-cta-headline {
-    font-size: 1.75rem;
-    margin-bottom: 0.875rem;
+    font-size: 1.875rem;
+    margin-bottom: 1.25rem;
   }
 
   .final-cta-subtext {
-    font-size: 0.9375rem;
-    margin-bottom: 1.75rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
   .final-cta-button {
-    padding: 0.875rem 1.75rem;
+    padding: 0.9375rem 2rem;
     font-size: 1rem;
+  }
+
+  .final-cta-microcopy {
+    margin-bottom: 1.75rem;
   }
 }
