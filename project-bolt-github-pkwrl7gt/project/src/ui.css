@@ -257,31 +257,22 @@
 .final-cta-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem 1.5rem;
-  background: transparent;
-}
-
-.final-cta-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
-  z-index: 1;
+  background: #0B0F14;
 }
 
 .final-cta-card {
   position: relative;
-  z-index: 2;
   width: 100%;
-  max-width: 460px;
+  max-width: 440px;
   background: #FFFFFF;
   border-radius: 16px;
   padding: 3rem 2.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -341,7 +332,7 @@
 @media (max-width: 768px) {
   .final-cta-section {
     padding: 3rem 1rem;
-    min-height: 80vh;
+    min-height: 90vh;
   }
 
   .final-cta-card {
