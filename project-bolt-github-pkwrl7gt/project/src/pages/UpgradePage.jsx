@@ -7,36 +7,37 @@ export default function UpgradePage() {
 
   const plans = [
     {
-      name: "Free",
-      price: "€0",
-      period: "altijd gratis",
-      description: "Een eerste kennismaking met Portfallo",
+      name: "Start",
+      price: "€9,99",
+      period: "per maand",
+      description: "Ideaal om Portfallo te ontdekken en je portfolio overzichtelijk bij te houden.",
       icon: TrendingUp,
       iconColor: "#64748b",
-      cta: "Huidige plan",
+      cta: "Start 7-daagse proefperiode",
       ctaVariant: "outline",
-      disabled: true
+      disabled: false,
+      onClick: true
     },
     {
       name: "Pro",
-      price: "€14,99",
+      price: "€19,99",
       period: "per maand",
-      description: "Voor beleggers die hun portfolio actief willen volgen",
+      description: "Voor actieve beleggers die hun portfolio willen optimaliseren met inzichten en analytics.",
       icon: Zap,
       iconColor: "#3b82f6",
       popular: true,
-      cta: "Kies Pro",
+      cta: "Start 7-daagse proefperiode",
       ctaVariant: "primary",
       onClick: true
     },
     {
       name: "Premium",
-      price: "€29,99",
+      price: "€34,99",
       period: "per maand",
-      description: "Voor beleggers die diepgaand inzicht en maximale controle willen",
+      description: "Voor beleggers die maximale controle, geavanceerde analyses en AI-ondersteuning willen.",
       icon: Crown,
       iconColor: "#f59e0b",
-      cta: "Kies Premium",
+      cta: "Start 7-daagse proefperiode",
       ctaVariant: "secondary",
       onClick: true
     }
@@ -105,7 +106,8 @@ export default function UpgradePage() {
             Professioneel portfolio management
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Kies het plan dat past bij jouw ambitie. Van kennismaking tot professionele controle.
+            Kies het plan dat past bij jouw beleggingsstijl.<br />
+            Alle plannen starten met een 7-daagse proefperiode. Geen creditcard nodig.
           </p>
         </div>
 
