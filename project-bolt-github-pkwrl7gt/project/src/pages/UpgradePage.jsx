@@ -119,9 +119,7 @@ export default function UpgradePage() {
           </p>
         </div>
 
-        <div className="mb-12 md:mb-14 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
-          <div className="hidden md:block"></div>
-
+        <div className="mb-12 md:mb-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5">
           {plans.map((plan, index) => {
             const IconComponent = plan.icon;
             return (
