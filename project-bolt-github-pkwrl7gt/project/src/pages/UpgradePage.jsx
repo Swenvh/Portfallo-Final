@@ -11,11 +11,12 @@ export default function UpgradePage() {
       name: "Start",
       monthlyPrice: "€9,99",
       yearlyPrice: "€95,90",
+      yearlyOriginalPrice: "€119,88",
       monthlyEquivalent: "€7,99",
       description: "Ideaal om Portfallo te ontdekken en je portfolio overzichtelijk bij te houden.",
       icon: TrendingUp,
       iconColor: "#64748b",
-      cta: "Start 7-daagse proefperiode",
+      cta: "Probeer Start – 7 dagen gratis",
       ctaVariant: "outline",
       disabled: false,
       onClick: true
@@ -24,12 +25,13 @@ export default function UpgradePage() {
       name: "Pro",
       monthlyPrice: "€19,99",
       yearlyPrice: "€191,90",
+      yearlyOriginalPrice: "€239,88",
       monthlyEquivalent: "€15,99",
       description: "Voor actieve beleggers die hun portfolio willen optimaliseren met inzichten en analytics.",
       icon: Zap,
       iconColor: "#3b82f6",
       popular: true,
-      cta: "Start 7-daagse proefperiode",
+      cta: "Start Pro – 7 dagen gratis",
       ctaVariant: "primary",
       onClick: true
     },
@@ -37,11 +39,12 @@ export default function UpgradePage() {
       name: "Premium",
       monthlyPrice: "€34,99",
       yearlyPrice: "€335,90",
+      yearlyOriginalPrice: "€419,88",
       monthlyEquivalent: "€27,99",
       description: "Voor beleggers die maximale controle, geavanceerde analyses en AI-ondersteuning willen.",
       icon: Crown,
       iconColor: "#f59e0b",
-      cta: "Start 7-daagse proefperiode",
+      cta: "Start Premium – 7 dagen gratis",
       ctaVariant: "secondary",
       onClick: true
     }
@@ -183,6 +186,11 @@ export default function UpgradePage() {
                 <p className="text-sm text-slate-600 mb-6 leading-relaxed min-h-[60px]">{plan.description}</p>
 
                 <div className="mb-6">
+                  {isYearly && (
+                    <div className="text-lg text-slate-400 line-through mb-1">
+                      {plan.yearlyOriginalPrice}
+                    </div>
+                  )}
                   <div className="text-4xl font-bold text-slate-900">
                     {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                   </div>
